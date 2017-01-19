@@ -19,18 +19,18 @@ var server = http.createServer(function (request, response) {
         console.log("GET");
         response.writeHeader(200, {'Content-Type': 'Text/Html'});
         var content = "";
-//        var name = request.body;
         var ul = url.parse(request.url, true).query;
-//        var query = url.parse(request.url, true).query;
-//        content += "<h1>Name is " + body + "</h1>";
         content += "<h1>Your name is " + ul.name + "</h1>";
         response.write(content);
         response.end();
     } else if (request.method === "POST") {
         console.log("POST");
     }
-}).listen(8080);
-//server.listen(8080);
+}).listen(process.env.PORT || 8080, function () {
+    console.log('listening on ' + server.address().port);
+});
+
+
 
 
 
