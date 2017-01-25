@@ -19,9 +19,9 @@ var server = http.createServer(function (request, response) {
         response.writeHeader(200, {'Content-type': "Application/json"});
         var req = "";
         request.on('result', function (js) {
-            red += js;
+            req += js;
         });
-        console.log("Request: " + js);
+        console.log("Request: " + req);
 
         var content = {'speech': 'Please wait a moment for your order.', 'displayText': 'Please wait a moment for your order.We are making it!', 'data': {}, 'contextOut': [], 'source': "Thien Tu"};
         response.write(JSON.stringify(content));
