@@ -17,9 +17,15 @@ var server = http.createServer(function (request, response) {
         response.end();
     } else if (request.method === "POST") {
         response.writeHeader(200, {'Content-type': "Application/json"});
+        var req = "";
+        request.on('result', function (js) {
+            red += js;
+        });
+        console.log("Request: " + js);
+
         var content = {'speech': 'Please wait a moment for your order.', 'displayText': 'Please wait a moment for your order.We are making it!', 'data': {}, 'contextOut': [], 'source': "Thien Tu"};
         response.write(JSON.stringify(content));
-        console.log(JSON.stringify(content));
+        console.log("Send response: " + JSON.stringify(content));
         response.end();
         console.log("POST");
     }
