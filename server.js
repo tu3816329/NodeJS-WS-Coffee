@@ -13,7 +13,7 @@ var app = express();
 //app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.post('', function (request, response) {
+app.post('/', function (request, response) {
 //    console.log(request.body);
     var jsBody = JSON.parse(JSON.stringify(request.body));
     var data = jsBody.result.parameters.Amount;
@@ -28,7 +28,7 @@ app.post('', function (request, response) {
     response.end();
     console.log("POST");
 });
-app.get('', function (request, response) {
+app.get('/', function (request, response) {
     console.log("GET");
     response.writeHeader(200, {'Content-Type': 'Text/Html'});
     var content = "";
