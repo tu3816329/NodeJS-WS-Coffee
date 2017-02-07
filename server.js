@@ -27,7 +27,7 @@ app.post('/webhook', function (request, response) {
         }
         var content = {'speech': 'Here s your menu.',
             'displayText': 'Here s your menu.' + display,
-            'data': {}, 'contextOut': [], 'source': "Thien Tu"};
+            'data': {}, 'contextOut': [], 'source': "Thien Tu", 'imageURL': 'https://image.freepik.com/free-vector/retro-menu_23-2147517653.jpg'};
     }
     ;
     response.write(JSON.stringify(content));
