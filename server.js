@@ -27,7 +27,9 @@ app.post('/webhook', function (request, response) {
         }
         var content = {'speech': 'Here s your menu.' + display,
             'displayText': 'Here s your menu.' + display,
-            'data': [{'type': 3, 'imageURL': 'https://image.freepik.com/free-vector/retro-menu_23-2147517653.jpg'}, {'type': 0, 'speech': 'Here s your menu.' + display}], 'contextOut': [], 'source': "Thien Tu"};
+            'data': {'facebook': [
+                    {'type': 3, 'imageURL': 'https://image.freepik.com/free-vector/retro-menu_23-2147517653.jpg'},
+                    {'type': 0, 'speech': 'Here s your menu.' + display}]}, 'contextOut': [], 'source': "Thien Tu"};
     }
     ;
     response.write(JSON.stringify(content));
