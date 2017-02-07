@@ -25,9 +25,10 @@ app.post('/webhook', function (request, response) {
         for (var i = 0; i < drinks.length; i++) {
             display += "\n" + drinks[i].toString() + "         " + prices[i].toString();
         }
-        var content = {'speech': 'Here s your menu.',
+        var content = {
             'displayText': 'Here s your menu.' + display,
-            'data': {}, 'contextOut': [], 'source': "Thien Tu", 'imageURL': 'https://image.freepik.com/free-vector/retro-menu_23-2147517653.jpg'};
+            'data': {}, 'contextOut': [], 'source': "Thien Tu",
+            'messages': [{'type': 3, 'imageURL': 'https://image.freepik.com/free-vector/retro-menu_23-2147517653.jpg'}, {'type': 0, 'speech': 'Here s your menu.'}]};
     }
     ;
     response.write(JSON.stringify(content));
