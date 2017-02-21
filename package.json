@@ -21,8 +21,10 @@
         "url": "https://github.com/tu3816329/NodeJS-WS-Coffee.git"
     },
     "dependencies": {
-        "body-parser": "^1.0.5",
-        "express": "^4.14.0"
+        "body-parser": "^1.16.1",
+        "express": "^4.14.1",
+        "pg": "^6.1.2",
+        "pg-promise": "^5.5.6"
     },
     "contributors": [],
     "bugs": {
